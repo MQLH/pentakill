@@ -24,7 +24,7 @@ public class DefaultMessageSource implements MessageSource {
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		messageSources = new Properties();
 		try {
-			Resource[] resources = resolver.getResources("classpath:cfg/messages*.properties");
+			Resource[] resources = resolver.getResources("classpath:cfg/*_config.properties");
 			for(Resource resource : resources){
 				PropertiesLoaderUtils.fillProperties(messageSources, resource);
 			}
