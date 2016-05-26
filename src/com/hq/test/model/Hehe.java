@@ -1,4 +1,11 @@
 package com.hq.test.model;   
+
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**     
  * Function: TODO 
  *
@@ -12,11 +19,11 @@ package com.hq.test.model;
 public class Hehe {
 	private String name;
 	private String age;
-	
-	@Override
-	public String toString() {
-		return "Hehe [name=" + name + ", age=" + age + "]";
+	private Date createtime;
+	public Hehe() {
+		super();
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -28,6 +35,13 @@ public class Hehe {
 	}
 	public void setAge(String age) {
 		this.age = age;
+	}
+	
+	public Date getCreatetime() {
+		return createtime;
+	}
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
 	}
 	
 }

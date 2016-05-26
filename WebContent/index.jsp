@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -20,20 +20,31 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<%@ include file="/common/include.jsp"%>
+<script type="text/javascript" src="resources/js/jquery-1.8.3.min.js"></script>
 </head>
 <script type="text/javascript">
 	$(function($) {
 		var name = $('#name').val();
 		var age = $('#age').val();
-		alert("${pageContext.request.contextPath}");
-		$.post("/pentakill/hello/hehe.do", {
-			"name" : name,
-			"age" : age
+		/* $.post("/pentakill/hello/hehe.do", {
+			name : "111",
+			age : "222"
 		}, function(result) {
 			alert("success");
-		},
-		"json");
+		}, "json"); */
+		var mydata = '{"name":"111","age":"222","createtime":"2015-05-05"}';
+		/* $("#addNewsForm", navTab.getCurrentPanel()).serializeArray(); */
+		alert(mydata);
+		$.ajax({
+			url : "http://localhost:8686/pentakill/hello/hehe.do",
+			data : mydata,
+			type : "post",
+			dataType : 'json',
+			contentType : 'application/json',
+			success : function(result) {
+				alert(result);
+			}
+		});
 	});
 </script>
 <body>
