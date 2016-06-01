@@ -7,3 +7,4 @@
 <script src="../pentakill/resources/js/easyui-extension.min.js" type="text/javascript"></script>
 <script src="../pentakill/resources/js/locale.js" type="text/javascript"></script>
 <script src="../pentakill/resources/js/platform.core.js" type="text/javascript"></script>
+<script src="../pentakill/resources/js/common.js" type="text/javascript"></script>
