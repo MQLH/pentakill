@@ -33,7 +33,6 @@ public class DefaultMessageSource implements MessageSource {
 		}
 	}
 	
-	@Override
 	public String getMessage(String code,String fileName){
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		Properties properties = new Properties();
@@ -51,7 +50,6 @@ public class DefaultMessageSource implements MessageSource {
 		return MessageFormat.format(format,"");
 	}
 
-	@Override
 	public String getMessage(String code, Object[] args) {
 		String format = messageSources.getProperty(code);
 		if(StringUtils.isEmpty(format)){
@@ -61,7 +59,6 @@ public class DefaultMessageSource implements MessageSource {
 		return MessageFormat.format(format, args);
 	}
 
-	@Override
 	public String getMessage(String code, Object[] args, String defaultMessage) {
 		String message = null;
 		try{
