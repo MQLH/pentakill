@@ -106,6 +106,6 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-	<import resource="classpath*:cfg/spring-for-*.xml" />
+	<import resource="spring-for-webmvc.xml" />
 	<import resource="dubbo_consumer.xml" />
 </beans>
